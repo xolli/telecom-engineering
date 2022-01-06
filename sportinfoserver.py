@@ -19,7 +19,7 @@ class SportInfoServer:
         :param port (int): port of server
         :param file_output (string): filename of log file
         """
-        self.file_output = open(file_output, "w")
+        self.file_output_name = file_output
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.socket.bind(("", port))
         self.socket.listen(100)
@@ -58,11 +58,12 @@ class SportInfoServer:
         """
         Just call this function for running server
         """
-        while True:
-            events = self.selector.select()
-            for key, mask in events:
-                callback = key.data
-                callback(key.fileobj, mask)
+        with open(self.file_output_name, "w") as self.file_output:
+            while True:
+                events = self.selector.select()
+                for key, mask in events:
+                    callback = key.data
+                    callback(key.fileobj, mask)
 
 
 if __name__ == '__main__':
