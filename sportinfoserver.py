@@ -37,7 +37,6 @@ class SportInfoServer:
                 sportsmen.number, sportsmen.channel, sportsmen.hours,
                 sportsmen.minutes, sportsmen.seconds, sportsmen.milliseconds // 100, sportsmen.group)
         self.file_output.write(output_str)
-        self.file_output.flush()
         if sportsmen.group == 0:
             print(output_str, end = '')
 
