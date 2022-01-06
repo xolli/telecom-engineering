@@ -146,3 +146,6 @@ cython_debug/
 
 # PyCharm
 .idea/
+
+# output file
+athletes.txt
