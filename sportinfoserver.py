@@ -7,6 +7,7 @@ import socket
 import sportparser
 
 PORT = 4040
+FILENAME = "athletes.txt"
 
 
 class SportInfoServer:
@@ -66,5 +67,5 @@ class SportInfoServer:
 
 
 if __name__ == '__main__':
-    server = SportInfoServer(PORT, "athletes.txt")
+    server = SportInfoServer(PORT, FILENAME)
     server.start()
