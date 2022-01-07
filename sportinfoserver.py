@@ -11,7 +11,7 @@ FILENAME = "athletes.txt"
 
 
 class SportInfoServer:
-    MESSAGE_SIZE = 1000
+    MESSAGE_SIZE = 25
     PRINT_FORMAT_STRING = "Спортсмен, нагрудный номер {:04d} прошёл отсечку {:2} в {:02d}:{:02d}:{:02d}.{:d}, группа: {:d}\n"
 
     def __init__(self, port: int, file_output: str):
